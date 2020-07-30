@@ -6,15 +6,17 @@ public class SudokuImpl implements SudokuIntf {
 	public boolean checkValidity(int sudoku[][], int row, int column, int digit) {
 
 		for (int i = 0; i < 9; i++) {
-
+			// validate to whole row 
 			if (sudoku[row][i] == digit) {
 				return false;
 			}
+			// validate to whole column
 			if (sudoku[i][column] == digit) {
 				return false;
 			}
 		}
 
+		//conditon to validate block
 		if (row == 0 || row == 1 || row == 2) {
 
 			if (column == 0 || column == 1 || column == 2) {

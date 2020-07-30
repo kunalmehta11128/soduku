@@ -19,6 +19,7 @@ public class SudokuMain {
 		int row;
 		int column;
 
+		//loop run till value not getting 2 digit value
 		while (value < 10) {
 
 			System.out.println("press 10 to exit");
@@ -28,11 +29,15 @@ public class SudokuMain {
 			column = sc.nextInt();
 			value = sc.nextInt();
 
+			//condition to break the loop 
 			if (row > 9 || column > 9 || value > 9) {
 				break;
 			}
+			
+			//call method and get response true or falue
 			System.out.println(s.checkValidity(arr, row, column, value));
 
+			//loop for print matrix
 			for (int i = 0; i < 9; i++) {
 
 				System.out.println();
