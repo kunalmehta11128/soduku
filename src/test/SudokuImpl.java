@@ -14,22 +14,7 @@ public class SudokuImpl implements SudokuIntf{
     			return false;
     		}		
     	}
-//    	
-//		for (int k = 0; k < 9; k += 3) {
-//
-//			for (int i = k+0; i < k+3; i++) {
-//
-//				for (int j = k+0; j < k+3; j++) {
-//
-//					if (sudoku[i][j] == digit) {
-//						return false;
-//					}
-//
-//				}
-//			}
-//
-//		}
-    	
+
     	if(row == 0 || row == 1 || row == 2) {
     		
     		if(column == 0 || column == 1 || column == 2) {
@@ -166,17 +151,21 @@ public class SudokuImpl implements SudokuIntf{
 			if (column == 6 || column == 7 || column == 8) {
 				
 				
-				for (int i = 6; i < 9; i++) {
-
-					for (int j = 6; j < 9; j++) {
-
-						if (sudoku[i][j] == digit) {
-							return false;
-						}
-
-					}
-				}
-
+//				for (int i = 6; i < 9; i++) {
+//
+//					for (int j = 6; j < 9; j++) {
+//
+//						if (sudoku[i][j] == digit) {
+//							return false;
+//						}
+//
+//					}
+//				}
+				
+				boolean  val=  validate(sudoku,digit,6,9);
+					if(val == Boolean.FALSE)
+						return Boolean.FALSE;
+				
 			}
 		}
     	
@@ -187,5 +176,22 @@ public class SudokuImpl implements SudokuIntf{
     	
     	
     }
+	
+	private boolean validate(int sudoku[][], int digit, int i,int j) {
+
+		for (i =i; i < 9; i++) {
+
+			for (j = j; j < 9; j++) {
+
+				if (sudoku[i][j] == digit) {
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
+
+
 
 }

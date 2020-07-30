@@ -28,14 +28,18 @@ public class SudokuMain  {
     			
     	while (value < 10) {
 
-    		System.out.print("please enter value : [row ][column] and digit to enter" );
+    		System.out.println("press 10 to exit" );
+    		System.out.println("please enter value : [row][column] and digit to enter" );
 
     		row = sc.nextInt();
     		column = sc.nextInt();
     		value = sc.nextInt();
+    		
+    		if(row > 9 || column > 9 || value > 9) {
+    			break;
+    		}
         	System.out.println(s.checkValidity(arr,row,column,value));
  
-    	}
     	
 
     	
@@ -45,12 +49,13 @@ public class SudokuMain  {
     		System.out.println();
     		
     		for(int j = 0; j < 9; j++) {
-    			
-    			System.out.print(arr[i][j]);
+    			System.out.print(arr[i][j] +"|" );
     		}
+    		
     		
     	}
     	
+    	}
    
     	
     	
