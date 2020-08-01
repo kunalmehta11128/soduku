@@ -1,4 +1,4 @@
-package test;
+package Sudoku;
 
 public interface SudokuIntf {
 	

@@ -1,4 +1,4 @@
-package test;
+package Sudoku;
 
 public class SudokuImpl implements SudokuIntf {
 
