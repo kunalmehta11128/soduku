@@ -20,9 +20,11 @@ public class SudokuMain {
 		// loop run till all value not put
 		while (count < 81) {
 
-			System.out.println("Enter Row, Column and Digit: ");
+			System.out.println("Enter Row: ");
 			row = sc.nextInt();
+			System.out.println("Enter Column: ");
 			column = sc.nextInt();
+			System.out.println("Enter Digit: ");
 			value = sc.nextInt();
 			
 			Boolean ans = Boolean.FALSE;
@@ -37,25 +39,27 @@ public class SudokuMain {
 			//if count++ when value inserted and also print message
 			if (Boolean.TRUE.equals(ans)) {
 				System.out.println("Value successfully inserted :" + ans);
+				
+				// loop for print matrix
+				for (int i = 0; i < 9; i++) {
+
+					System.out.print("\n | ");
+
+					for (int j = 0; j < 9; j++) {
+						System.out.print(arr[i][j] + " | ");
+					}
+					
+					if(i == 2 || i == 5 || i == 8) {
+						System.out.print("\n ------------------------------------- \n");
+					}
+
+				}
 				count++;
 			} else {
 				System.out.println("Value are not inserted :" + ans);
 			}
 
-			// loop for print matrix
-			for (int i = 0; i < 9; i++) {
-
-				System.out.print("\n | ");
-
-				for (int j = 0; j < 9; j++) {
-					System.out.print(arr[i][j] + " | ");
-				}
-				
-				if(i == 2 || i == 5 || i == 8) {
-					System.out.print("\n ------------------------------------- \n");
-				}
-
-			}
+			
 			
 
 		}
